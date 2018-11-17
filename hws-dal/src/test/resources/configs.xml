@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  数据接入层的总体配置，为了便于管理，将不同类型，分为数据库配置和DataSet配置-->
+<configs>
+	<clustclientconfs>
+		<clustclientconf comment="cluster client of mongodb for test">clustclient.xml</clustclientconf>
+	</clustclientconfs>
+	<databaseconfs>
+		<databaseconf comment="test databases">database.xml</databaseconf>
+	</databaseconfs>
+	<datasetconfs>
+		<datasetconf comment="test datasets">dataset.xml</datasetconf>
+	</datasetconfs>
+</configs>

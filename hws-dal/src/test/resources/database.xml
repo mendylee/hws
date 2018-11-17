@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databases>
+	<database name="uiac" isvirtual="0" class="db.mongo.MongodbDatabase" client="mongoclustclient"/>
+	<database name="db1" isvirtual="0" class="db.mysql.MysqlDatabase" client="mysqlclustclient"/>
+	<database name="bxr_app_production" isvirtual="0" class="db.pgsql.PgsqlDatabase" client="pgsqlclustclient"/>
+	<database name="mcdb" isvirtual="0" class="db.mc.MemcachedDatabase" client="memcachedclient"/>
+</databases>

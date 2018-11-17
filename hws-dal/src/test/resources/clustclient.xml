@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!-- 集群客户端服务器配置 -->
+	<clustclients>
+ 		 <clustclient name="mysqlclustclient" type="1" class="db.mysql.MysqldbClient">
+			<servers>
+				<server name="server1" id="0" 
+						url="jdbc:mysql://192.168.9.109:3306/db1?characterEncoding=utf-8" 
+						driver="com.mysql.jdbc.Driver" 
+						user="root" 
+						pass="redhat" 
+						auth="" 
+						timeout="10000"/>
+			</servers>
+		 </clustclient>
+  		 <clustclient name="pgsqlclustclient" type="1" class="db.pgsql.PgsqldbClient">
+			<servers>
+				<server name="server1" id="0" 
+						url="jdbc:postgresql://192.168.8.22:5432/bxr_app_production" 
+						driver="org.postgresql.Driver" 
+						user="xrkadmin" 
+						pass="xrktest123" 
+						auth="" 
+						timeout="10000"/>
+			</servers>
+		 </clustclient>
+		 
+ 		<!-- Mongodb数据库服务配置 -->
+		<clustclient name="mongoclustclient" type="0" class="db.mongo.MongodbClient">
+			<servers>
+				<server name="server1" 
+						id="0" 
+						policy="3"
+						fsync = "true"
+						host="192.168.8.48" 
+						port="27017" 
+						user="uiac"
+						schema="uiac"
+						pass="xrktest123" 
+						weight="1" 
+						timeout="1"/>
+				<server name="server2" 
+						id="1" 
+						policy="3"
+						fsync = "true"
+						host="192.168.8.49" 
+						port="27017" 
+						user="uiac"
+						schema="uiac"
+						pass="xrktest123" 
+						weight="1" 
+						timeout="1"/>
+			</servers>
+		 </clustclient>
+  		 <clustclient name="memcachedclient" type="0" class="db.mc.MemCachedClient">
+			<servers>
+				<server name="server1" 
+						id="0" 
+						policy="3"
+						host="192.168.9.109" 
+						port="11211" 
+						user="root" 
+						pass="redhat" 
+						auth="" 
+						timeout="10000"/>
+			</servers>
+		 </clustclient>
+	</clustclients>

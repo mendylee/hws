@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DataSet配置-->
+<packages>
+	<package name="com.xrk.hws.dal.db">
+		<!-- Mongodb CURD样例 -->
+		<dataset name="mongo" iscache="0" db="uiac" dataclass="TestEntity" class="core.DataSet">
+			<comtemplates>
+				<comtemplate  name="findone"   type="findone">
+					<format name="query" paranum="1">{"a":%d}</format>
+					<format name="fields" paranum="0">{"a":1,"b":1}</format>
+				</comtemplate>
+				<comtemplate  name="minsert" type="minsert">
+				</comtemplate>
+				<comtemplate  name="insertone" type="insertone"></comtemplate>
+				<comtemplate  name="update" type="update">
+					<format name="query" paranum="1">{"a":%d}</format>
+					<format name="update" paranum="1">{$set:{"b":"%s"}}</format>
+				</comtemplate>
+				<comtemplate  name="delete" type="delete">
+					<format name="query" paranum="2">{"a":%d,"b":"%s"}</format>
+				</comtemplate>
+				<comtemplate  name="count" type="count">
+					<format name="query" paranum="2">{"a":{$lt,%d},"b":"%s"}</format>
+				</comtemplate>
+		  </comtemplates>
+		</dataset>
+		<!-- Mysqlsql CURD样例 -->
+		<dataset name="mysql" iscache="0" db="bxr_app_production" dataclass="Province" class="core.DataSet">
+			<comtemplates>
+				<comtemplate  name="insertone" type="insertone"/>
+ 				<comtemplate  name="findone"   type="findone">
+					<format name="query" paranum="1">id=%d</format>
+				</comtemplate>
+				<comtemplate name="mfind" type="mfind">
+					<format name="query" paranum="1">is_biz=%d</format>
+				</comtemplate>
+				<comtemplate  name="update" type="update">
+					<format name="query" paranum="1">id=%d</format>
+					<format name="update" paranum="1">name='%s'</format>
+				</comtemplate>
+				<comtemplate  name="delete" type="delete">
+					<format name="query" paranum="1">id=%d</format>
+				</comtemplate>
+		  </comtemplates>
+		</dataset>
+		<!-- Postgresql CURD样例 -->
+		<dataset name="pgsql" iscache="0" db="bxr_app_production" dataclass="Province" class="core.DataSet">
+			<comtemplates>
+				<comtemplate  name="insertone" type="insertone"/>
+ 				<comtemplate  name="findone"   type="findone">
+					<format name="query" paranum="1">id=%d</format>
+				</comtemplate>
+				<comtemplate name="mfind" type="mfind">
+					<format name="query" paranum="1">is_biz=%d</format>
+				</comtemplate>
+				<comtemplate  name="update" type="update">
+					<format name="query" paranum="1">id=%d</format>
+					<format name="update" paranum="1">name='%s'</format>
+				</comtemplate>
+				<comtemplate  name="delete" type="delete">
+					<format name="query" paranum="1">id=%d</format>
+				</comtemplate>
+		  </comtemplates>
+		</dataset>
+		
+		<!-- =====================================缓存============================================ -->
+				
+		<!-- Memcached CURD样例 -->
+		<dataset name="mc" iscache="0" db="mcdb" dataclass="TestMcEntity" class="core.DataSet">
+			<comtemplates>
+				<comtemplate  name="findone"   type="findone">
+					<format name="query" paranum="1">a:%d</format>
+				</comtemplate>
+				<comtemplate  name="minsert" type="minsert">
+				</comtemplate>
+				<comtemplate  name="insertone" type="insertone">
+					<format name="query" paranum="1">a:%d</format>
+				</comtemplate>
+				<comtemplate  name="delete" type="delete">
+					<format name="query" paranum="1">a:%d</format>
+				</comtemplate>
+		  	</comtemplates>
+		</dataset>
+	</package>
+</packages>
